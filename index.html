@@ -104,11 +104,7 @@
     
     ref.on("child_added", function(snapshot,error) {
         var newPost = snapshot.val();
-        console.log(newPost);
         if (newPost.date === 1) {
-        	console.log(newPost);
-        	console.log(newPost.date);
-        	console.log(newPost.msg);
             tx.innerHTML +=  "*** " + newPost.msg + " ***\r\n";
             tx.scrollTop = tx.scrollHeight;
             return;
