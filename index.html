@@ -77,35 +77,33 @@
 						<p>万物互聊</p>
 					</header>
 					<div class="box">
-						<form method="post" action="#">
-							<div class="row uniform 50%">
-								<div class="6u 12u(mobilep)">
-									<input id="utx" type="text" name="name"  value="" placeholder="请给自己起个好听的名字~~~" />
-								</div>
-								<div class="6u 12u(mobilep)">
-									<ul class="actions align-center">
-										<li><input type="button" onclick="initName()" value="设置" /></li>
-									</ul>
-								</div>
+						<div class="row uniform 50%">
+							<div class="6u 12u(mobilep)">
+								<input id="utx" type="text" name="name"  value="" placeholder="请给自己起个好听的名字~~~" />
 							</div>
-							<div class="row uniform 50%">
-								<div class="12u">
-									<textarea name="message" id="tx" disabled="disabled" rows="6"></textarea>
-								</div>
+							<div class="6u 12u(mobilep)">
+								<ul class="actions align-center">
+									<li><input type="button" onclick="initName()" value="设置" /></li>
+								</ul>
 							</div>
-							<div class="row uniform 50%">
-								<div class="12u">
-									<textarea id="wtx" name="message"  placeholder="来说点什么~~" rows="6"></textarea>
-								</div>
+						</div>
+						<div class="row uniform 50%">
+							<div class="12u">
+								<textarea name="message" id="tx" disabled="disabled" rows="6"></textarea>
 							</div>
-							<div class="row uniform">
-								<div class="12u">
-									<ul class="actions align-center">
-										<li><input type="submit" onclick="onUpdate()" value="发送" /></li>
-									</ul>
-								</div>
+						</div>
+						<div class="row uniform 50%">
+							<div class="12u">
+								<textarea id="wtx" name="message"  placeholder="来说点什么~~" rows="6"></textarea>
 							</div>
-						</form>
+						</div>
+						<div class="row uniform">
+							<div class="12u">
+								<ul class="actions align-center">
+									<li><input type="button" onclick="onUpdate()" value="发送" /></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</section>
 
