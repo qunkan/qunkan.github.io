@@ -44,13 +44,10 @@
 		
 		</script>    
 		<script>
-		  var ref = new Wilddog("https://irc.wilddogio.com/msgs/");alert("1");
-		  var name = getCookie('nickname');alert("2");
-		  if (name == null) name = '';alert("3");
-		  
-		  if (window.Notification) alert("Notification");
-		  else alert("noooooooooooo Notification");
-		  
+		  var ref = new Wilddog("https://irc.wilddogio.com/msgs/");
+		  var name = getCookie('nickname');
+		  if (name == null) name = '';
+	
 		  if(window.Notification && Notification.permission !== "granted"){
 				Notification.requestPermission(function(status){
 					if(Notification.permission !== status){
@@ -136,8 +133,6 @@
 
 			
 			<script>
-			alert("4");
-			alert(tDate);
 				var tx = document.getElementById("tx");
 				var wtx = document.getElementById("wtx");
 				var ntx = document.getElementById("utx");
