@@ -48,6 +48,8 @@
 		  var name = getCookie('nickname');
 		  if (name == null) name = '';
 		  
+		  if (Notification) alert("Notification");
+		  else alert("noooooooooooo Notification");
 		  
 		  if(Notification && Notification.permission !== "granted"){
 				Notification.requestPermission(function(status){
@@ -58,8 +60,6 @@
 			}
 			
 			var tDate = new Date().getTime();
-			alert("ttttttttttttttt");
-			alert(tDate);
 		</script>
 
 		
