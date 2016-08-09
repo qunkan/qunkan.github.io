@@ -149,7 +149,7 @@
 						return;
 					} else if (newPost.date <= tDate) return;
 					
-					tp1 = new Date().getTime();
+					tp1 = newPost.date;
 					
 					 if (tp1 > tp0 + 31536000000) { // 365 * 24 * 60 * 60 * 1000
 					 	tp = new Date(tp1).toLocaleTimeString("chinese", {hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
