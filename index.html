@@ -48,10 +48,10 @@
 		  var name = getCookie('nickname');alert("2");
 		  if (name == null) name = '';alert("3");
 		  
-		  if (Notification) alert("Notification");
+		  if (window.Notification) alert("Notification");
 		  else alert("noooooooooooo Notification");
 		  
-		  if(Notification && Notification.permission !== "granted"){
+		  if(window.Notification && Notification.permission !== "granted"){
 				Notification.requestPermission(function(status){
 					if(Notification.permission !== status){
 						Notification.permission = status;
