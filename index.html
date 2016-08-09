@@ -138,6 +138,7 @@
 				var ntx = document.getElementById("utx");
 				ntx.value = name;
 				tx.innerHTML = "";
+				var tp0 = tp1 = 0;
 
 				
 				ref.on("child_added", function(snapshot,error) {
@@ -147,13 +148,27 @@
 						tx.scrollTop = tx.scrollHeight;
 						return;
 					} else if (newPost.date <= tDate) return;
-					var t0 = new Date(newPost.date);
-					tp = t0.getFullYear() + "-" + (t0.getMonth() + 1) + "-" + t0.getDate() + " " + 
-						t0.getHours() + ":" + t0.getMinutes() + ":" + t0.getSeconds();
+					
+					tp1 = new Date().getTime();
+					
+					 if (tp1 > tp0 + 31536000000) { // 365 * 24 * 60 * 60 * 1000
+					 	tp = new Date(tp1).toLocaleTimeString("chinese", {hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+					 	tx.innerHTML += tp + "\r\n";
+					 } else if (tp1 > tp0 + 86400000) { // 24 * 60 * 60 * 1000
+					 	tp = new Date(tp1).toLocaleTimeString("chinese", {hour12:false,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+					 	tx.innerHTML += tp + "\r\n";
+					 } else if (tp1 > tp0 + 300000) { // 5 * 60 * 1000
+					 	tp = new Date(tp1).toLocaleTimeString("chinese", {hour12:false,hour:'2-digit',minute:'2-digit'});
+					 	tx.innerHTML += tp + "\r\n";
+					 } else {
+					 	tp = new Date(tp1).toLocaleTimeString("chinese", {hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});	
+					 }
+					 tp0 = tp1; 
+					
 					if (newPost.userid == "") {
 						tx.innerHTML +=  "*** " + newPost.msg + " ***\r\n";
 					} else {
-						tx.innerHTML += "[" + tp + "]" + newPost.userid + ": " + newPost.msg + "\r\n";    
+						tx.innerHTML += newPost.userid + ": " + newPost.msg + "\r\n";    
 					}
 					tx.scrollTop = tx.scrollHeight;
 					
