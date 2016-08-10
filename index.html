@@ -44,6 +44,13 @@
 		
 		</script>    
 		<script>
+			var cref = new Wilddog("https://irc.wilddogio.com/sys/");
+			cref.once("value", function(snapshot) {				
+				var count = snapshot.val().count + 1;
+				console.log(count);
+				cref.update({"count":count});
+			});
+		
 		  var ref = new Wilddog("https://irc.wilddogio.com/msgs/");
 		  var name = getCookie('nickname');
 		  if (name == null) name = '';
