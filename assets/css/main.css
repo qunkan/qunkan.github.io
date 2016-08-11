@@ -3561,7 +3561,7 @@
 		/* Box */
 
 			.box {
-				margin: 1em;
+				margin: 0;
 				overflow-x: hidden;
 				padding: 2em 2em !important;
 			}
@@ -3714,7 +3714,7 @@
 			.box {
 				border-radius: 0;
 				box-shadow: none;
-				margin: 1em 0 0 0;
+				margin: 0 0 0 0;
 				padding: 1em 1em !important;
 			}
 
